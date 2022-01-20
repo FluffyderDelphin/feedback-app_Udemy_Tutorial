@@ -25,4 +25,6 @@ Card.propTypes = {
   reverse: PropTypes.bool,
 };
 
-Card.defaultProps = {};
+Card.defaultProps = {
+  reverse: false,
+};
