@@ -5,7 +5,7 @@ import React from 'react';
 import RatingSelect from './RatingSelect';
 import Button from './shared/Button';
 
-function FeedbackForm() {
+function FeedbackForm({ handleAdd }) {
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
@@ -33,7 +33,11 @@ function FeedbackForm() {
         rating,
       };
 
-      console.log(newFeedback);
+      handleAdd(newFeedback);
+
+      setBtnDisabled(true);
+      setRating(10);
+      setText('');
     }
   };
 
